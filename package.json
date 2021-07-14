@@ -472,6 +472,7 @@
     "he": "1.1.1",
     "minimatch": "3.0.4",
     "mkdirp": "0.5.1",
+    "strip-color": "^0.1.0",
     "supports-color": "5.4.0",
     "wtfnode": "^0.8.4"
   },

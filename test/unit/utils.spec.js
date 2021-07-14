@@ -605,13 +605,12 @@ describe('lib/utils', function() {
     });
 
     it('replaces invalid xml characters', function() {
-      expect(
-        utils.escape('\x1B[32mfoo\x1B[0m'),
-        'to be',
-        '&#x1B;[32mfoo&#x1B;[0m'
-      );
       // Ensure we can handle non-trivial unicode characters as well
       expect(utils.escape('💩'), 'to be', '&#x1F4A9;');
+    });
+
+    it('removes color codes', function() {
+      expect(utils.escape('\x1B[32mfoo\x1B[0m'), 'to be', 'foo');
     });
   });
 });
